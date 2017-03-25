@@ -19,7 +19,7 @@ public class PosDevice {
     HashMap<String,String> posDevice;
     
     public PosDevice(String filePath){
-        posDevice = new HashMap();
+        posDevice = new HashMap<String,String>();
         String line = "";
         String cvsSplitBy = ",";
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {

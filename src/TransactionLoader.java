@@ -19,7 +19,7 @@ public class TransactionLoader {
     }
 
     public ArrayList<Transaction> loadDataset() {
-        ArrayList<Transaction> dataset = new ArrayList();
+        ArrayList<Transaction> dataset = new ArrayList<Transaction>();
         String line = "";
         String cvsSplitBy = ",";
 
