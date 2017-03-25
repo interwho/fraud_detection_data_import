@@ -56,8 +56,8 @@ public class TransactionStream {
         try {
             for (int i = 0; i < data.size(); i++) {
                 System.out.println(data.get(i).toJsonString());
-                stream.postData("http://localhost:81/api/datastream/transactions", data.get(i).toJsonString());
-                TimeUnit.MILLISECONDS.sleep(100);
+                stream.postData("http://localhost/api/datastream/transactions", data.get(i).toJsonString());
+                TimeUnit.MILLISECONDS.sleep(500);
             }            
         } catch (Exception e) {
             e.printStackTrace();

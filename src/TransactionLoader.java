@@ -44,12 +44,5 @@ public class TransactionLoader {
             e.printStackTrace();
         }
         return dataset;
-    }
-    
-    public static void main(String args[]){
-        TransactionLoader loader = new TransactionLoader("transaction.csv");
-        ArrayList<Transaction> data = loader.loadDataset();       
-        
-    }
-    
+    }  
 }

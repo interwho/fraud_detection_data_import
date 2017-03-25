@@ -42,12 +42,5 @@ public class PosDevice {
                 System.out.println(record);
             }
         }
-    }
-    
-    public static void main(String args[]){
-        PosDevice posData = new PosDevice("pos_device");
-        TransactionLoader loader = new TransactionLoader("transaction.csv");
-        ArrayList<Transaction> transData = loader.loadDataset();
-        posData.checkData(transData);
-    }
+    }  
 }
