@@ -2,9 +2,10 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by DO000 on 3/25/2017.
@@ -32,10 +33,11 @@ public class TransactionLoader {
                 String accountId = record[3];
                 String timeStamp = record[4];
                 dataset.add(new Transaction(transactionID, deviceID, transactionValue, accountId, timeStamp));
-                
-                Timestamp ts = new Timestamp( Long.valueOf(record[4]) );
-                if(record[3].equals("2604") )
-                    System.out.println( dataset.get(dataset.size()-1).toString() );
+                /*
+                SimpleDateFormat sdf = new SimpleDateFormat();
+                sdf.setTimeZone(TimeZone.getTimeZone("UTC"));                
+                String date = sdf.format(new Date(Long.valueOf(record[4])));
+                System.out.println( dataset.get(dataset.size()-1).toJsonString());*/
             }
 
         } catch (IOException e) {
@@ -46,7 +48,8 @@ public class TransactionLoader {
     
     public static void main(String args[]){
         TransactionLoader loader = new TransactionLoader("transaction.csv");
-        ArrayList<Transaction> data = loader.loadDataset();
+        ArrayList<Transaction> data = loader.loadDataset();       
+        
     }
     
 }

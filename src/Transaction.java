@@ -61,4 +61,12 @@ public class Transaction {
         return "Transaction{" + "transactionID=" + transactionID + ", deviceID=" + deviceID + ", transactionValue=" + transactionValue + ", accountId=" + accountId + ", timeStamp=" + timeStamp + '}';
     }   
     
+    
+   public String toJsonString(){
+       return "id=" + transactionID +"&" +
+               "device_id=" + deviceID +"&" +
+               "transaction_value=" + transactionValue+ "&" +
+               "account_id=" + accountId + "&" +
+               "ts_millis=" + timeStamp;
+   }
 }
